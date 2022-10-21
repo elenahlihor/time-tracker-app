@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="script.js" defer></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="app_cards" id="cards">
+
+    <div class="menu_card">
+      <div class="menu_card_top">
+        <img src="images/image-jeremy.png" width="50" height="50" alt="avatar_jeremy" class="avatar">
+        <p>Report for</p>
+        <h1>Jeremy Robson</h1>
+      </div>
+
+      <div class="menu_card_bottom">
+        <ul>
+          <li> <button id="daily">Daily</button></li>
+          <li> <button id="weekly">Weekly</button></li>
+          <li> <button id="monthly">Monthly</button></li>
+        </ul>
+     </div>
+    </div>  
+
+    <div class="card work" id="work">
+      <div class="card_banner"></div>
+      <div class="card_content">
+        <p class="card_title">Work</p> 
+        <div class="card_details daily show">
+          <p class="current_time"><time datetime="PT5H"> 5hrs</time></p> <!-- daily -->
+          <p class="previous_time">Yesterday - <time datetime="PT7H">7hrs</time></p> <!-- daily -->
+        </div>
+        <div class="card_details weekly">
+        <p class="current_time"> <time datetime="PT32H">32hrs</time></p> <!-- weekly -->
+        <p class="previous_time">Last week - <time datetime="PT36H">36hrs</time></p><!-- weekly -->
+        </div>
+        <div class="card_details monthly">
+          <p class="current_time"> <time datetime="PT103H">103hrs</time></p><!-- monthly -->
+          <p class="previous_time">Last month - <time datetime="PT128H">128hrs</time></p> <!-- monthly -->
+        </div>
+      </div>
+    </div>
+
+    <div class="card play" id="play">
+      <div class="card_banner"></div>
+       <div class="card_content">
+        <p class="card_title">Play</p> 
+        <div class="card_details daily">
+          <p class="current_time"> <time datetime="PT1H">1hr</time></p><!-- daily -->
+          <p class="previous_time">Yesterday - <time datetime="PT2H"> 2hrs</time></p><!-- daily -->
+        </div>
+        <div class="card_details weekly show">
+          <p class="current_time"> <time datetime="PT10H">10hrs</time></p> <!-- weekly -->
+          <p class="previous_time">Last week - <time datetime="PT8H">8hrs</time></p> <!-- weekly -->
+        </div>
+        <div class="card_details monthly">
+          <p class="current_time"> <time datetime="PT23H">23hrs</time></p> <!-- monthly -->
+          <p class="previous_time">Last month - <time datetime="PT29H">29hrs</time></p>  <!-- monthly -->
+        </div>
+    </div>
+    </div>
+
+    <div class="card study" id="study">
+      <div class="card_banner"></div>
+      <div class="card_content">
+        <p class="card_title">Study</p> 
+        <div class="card_details daily">
+          <p class="current_time"> <time datetime="PT0H">0hrs</time></p> <!-- daily -->
+          <p class="previous_time">Yesterday - <time datetime="PT1H">1hr</time></p> <!-- daily -->
+        </div>
+        <div class="card_details weekly">
+          <p class="current_time"> <time datetime="PT4H">4hrs</time></p> <!-- weekly -->
+          <p class="previous_time">Last week - <time datetime="PT7H">7hrs</time></p><!-- weekly -->
+        </div>
+        <div class="card_details monthly show">
+          <p class="current_time"> <time datetime="PT13H">13hrs</time> </p><!-- monthly -->
+          <p class="previous_time">Last month - <time datetime="PT19H">19hrs</time></p> <!-- monthly -->
+        </div>
+      </div> 
+    </div>
+
+    <div class="card exercise" id="exercise">
+      <div class="card_banner"></div>
+      <div class="card_content">
+        <p class="card_title">Exercise</p> 
+        <div class="card_details daily show">
+          <p class="current_time"> <time datetime="PT1H">1hr</time></p><!-- daily -->
+          <p class="previous_time">Yesterday - <time datetime="PT1H">1hr</time></p><!-- daily -->
+        </div>
+        <div class="card_details weekly">
+          <p class="current_time"> <time datetime="PT4H">4hrs</time></p> <!-- weekly -->
+          <p class="previous_time">Last week - <time datetime="PT5H">5hrs</time></p> <!-- weekly -->
+        </div>
+        <div class="card_details monthly">
+          <p class="current_time"> <time datetime="PT11H">11hrs</time></p><!-- monthly -->
+          <p class="previous_time">Last month -  <time datetime="PT18H">18hrs</time></p><!-- monthly -->
+        </div>
+    </div>
+    </div>
+
+    <div class="card social" id="social">
+      <div class="card_banner"></div>
+      <div class="card_content">
+        <p class="card_title">Social</p> 
+        <div class="card_details daily show">
+          <p class="current_time"> <time datetime="PT1H">1hr</time></p><!-- daily -->
+          <p class="previous_time">Yesterday - <time datetime="PT3H">3hrs</time></p><!-- daily -->
+        </div>
+        <div class="card_details weekly" id="weekly">
+          <p class="current_time" > <time datetime="PT5H">5hrs</time></p><!-- weekly -->
+          <p class="previous_time">Last week - <time datetime="PT10H">10hrs</time></p> <!-- weekly -->
+        </div>
+        <div class="card_details monthly">
+          <p class="current_time"> <time datetime="PT21H"> 21hrs</time></p><!-- monthly -->
+          <p class="previous_time">Last month - <time datetime="PT23H">23hrs</time></p><!-- monthly -->
+        </div>
+      </div>
+    </div>
+
+    <div class="card self_care" id="self_care">
+      <div class="card_banner"></div>
+      <div class="card_content">
+        <p class="card_title">Self Care</p> 
+        <div class="card_details daily">
+          <p class="current_time"> <time datetime="PT0H">0hrs</time></p><!-- daily -->
+          <p class="previous_time">Yesterday -  <time datetime="PT1H">1hr</time></p><!-- daily -->
+        </div>
+        <div class="card_details weekly show">
+          <p class="current_time"> <time datetime="PT2H">2hrs</time></p><!-- weekly -->
+          <p class="previous_time">Last week - <time datetime="PT2H">2hrs</time></p><!-- weekly -->
+        </div>
+        <div class="card_details monthly">
+          <p class="current_time"> <time datetime="PT7H">7hrs</time></p><!-- monthly -->
+          <p class="previous_time">Last month - <time datetime="PT11H">11hrs</time></p> <!-- monthly -->
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#" target="_blank">Elena Hlihor</a>.
+</div>
+</html>

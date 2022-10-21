@@ -1,0 +1,221 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+--Blue: hsl(246, 80%, 60%);
+
+--Light-red: hsl(15, 100%, 70%); /* work */
+--Soft-blue-play: hsl(195, 74%, 62%);/* play*/
+--Light-red-study: hsl(348, 100%, 68%);/* study */
+--Lime-green-exercise: hsl(145, 58%, 55%);/*execise */
+--Violet-social: hsl(264, 64%, 52%);/* social*/
+--Soft-orange: hsl(43, 84%, 65%);/* self care*/
+
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 36%, 32%);
+--Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body{
+    height: 100vh;
+
+    display: grid;
+    justify-content:center; 
+    align-content: center;
+    gap:3rem;
+
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--Very-dark-blue);
+    color: white;
+}
+
+.app_cards{
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(2, auto);
+
+    grid-template-areas: 
+        "menu work play study"
+        "menu exercise social self_care";
+   
+    gap: 2rem;
+}
+
+.menu_card{
+    grid-area: menu;
+    background-color: var(--Dark-blue);
+    border-radius: 10px;
+}
+.menu_card_top{
+    background-color: var(--Blue);
+    border-radius: 10px;
+    padding-top:3rem;
+    padding-left:1rem;
+}
+.menu_card_top p{
+    font-weight: 300;
+    font-size: 1rem;
+    padding-inline: 1rem;
+    color: var(--Pale-Blue);
+    margin-bottom: 0.5rem;
+}
+.menu_card_top h1{
+    font-weight: 300;
+    font-size: 2rem;
+    padding-inline: 1rem;
+    padding-bottom: 6rem;
+}
+.avatar{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border:2px solid white;
+    margin: 1rem;
+}
+.menu_card_bottom{
+    border-radius: 10px;
+}
+
+.menu_card_bottom ul{
+    list-style-type: none;
+    padding: 1rem;
+}
+.menu_card_bottom ul li>button{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color:white;
+
+    background-color: transparent;
+    border: 0px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.menu_card_bottom ul li>button:hover,
+.menu_card_bottom ul li>button:focus-visible{
+    color:var(--Pale-Blue);
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+}
+.card_banner{
+    width: 100%;
+    height: 5vh;
+    overflow: hidden;
+}
+.card_content{
+    background-color: var(--Dark-blue);
+    border-radius: 10px;
+    position: relative;
+}
+
+.card_content:hover,
+.card_content:focus-visible{
+    background-color: var(--Desaturated-blue);
+    cursor: pointer;
+}
+
+.work,
+.play,
+.study,
+.exercise,
+.social,
+.self_care{
+    background-position: top -0.2rem right 1rem;
+    background-repeat: no-repeat;
+    background-size: 50px; 
+}
+
+.work{
+    grid-area: work;
+    background-color: var(--Light-red);
+    background-image: url("images/icon-work.svg");
+}
+
+.play{
+    grid-area: play;
+    background-color: var(--Soft-blue-play);
+    background-image: url("images/icon-play.svg");
+}
+
+.study{
+    grid-area: study;
+    background-color: var(--Light-red-study);
+    background-image: url("images/icon-study.svg");
+}
+
+.exercise{
+    grid-area: exercise;
+    background-color: var(--Lime-green-exercise);
+    background-image: url("images/icon-exercise.svg");
+}
+.social{
+    grid-area: social;
+    background-color: var(--Violet-social);
+    background-image: url("images/icon-social.svg");
+}
+.self_care{
+    grid-area: self_care;
+    background-color: var(--Soft-orange);
+    background-image: url("images/icon-self-care.svg");
+}
+
+.daily, 
+.weekly,
+.monthly{
+    display: none;
+    padding: 1rem;
+    font-family: 'Rubik', sans-serif;
+}
+.daily.show, 
+.weekly.show,
+.monthly.show{
+    display: initial;
+}
+
+.card_title{
+    padding: 1rem;
+}
+
+.current_time{
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem;
+
+}
+.previous_time{
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    text-align: right;
+    padding-right: 1rem;
+}
+.previous_time:hover,
+.previous_time:focus-visible{
+    color: var(--Pale-Blue);
+}
+
+@media (max-width: 600px){
+    .app_cards{
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "menu"
+            "work"
+            "play" 
+            "study"
+            "exercise" 
+            "social" 
+            "self_care";
+        gap:1rem;
+    }
+
+}
